@@ -93,6 +93,12 @@
             margin: 10px;
             padding: 20px;
             width: calc(30% - 40px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .project-card img {
@@ -137,6 +143,11 @@
             justify-content: center;
             margin: 20px auto;
             overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .circle:hover {
+            transform: scale(1.1);
         }
 
         .circle .percentage {
@@ -207,7 +218,7 @@
         <div>
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
+            <a href="#skills-section">Skills</a> <!-- Updated this line -->
             <a href="#contact">Contact</a>
         </div>
         <div class="social-icons">
@@ -260,7 +271,6 @@
         <section class="ftco-section" id="skills-section">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 heading-section">
-                    <!-- <span class="subheading">Skills</span> -->
                     <h2 class="mb-4">My Skills</h2>
                     <p>Proficiencies I bring to the table, shaping ideas into impactful creations with precision and expertise.</p>
                 </div>
@@ -308,7 +318,6 @@
                         <div class="percentage">80%</div>
                     </div>
                 </div>
-                
             </div>
         </section>
     </div>
