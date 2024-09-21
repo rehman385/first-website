@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Shafique UR Rehman | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #87CEEB; /* Light sky blue */
-            color: #333; /* Darker text for readability */
-            animation: fadeIn 1s; /* Fade-in animation for body */
+            background-color: #87CEEB;
+            color: #333;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        nav {
+            background-color: #e6e6fa;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #d8bfd8;
         }
 
         header {
-            background-color: #e6e6fa; /* Light purple header */
+            background-color: #e6e6fa;
             color: #000;
             padding: 30px 20px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.8s ease forwards; /* Slide-in animation for header */
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
 
         h1 {
             margin: 0;
             font-size: 2.5em;
-            animation: popIn 0.5s ease forwards; /* Pop-in animation for h1 */
-        }
-
-        @keyframes popIn {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
         }
 
         .container {
@@ -49,39 +57,26 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background-color: #f0f8ff; /* Light sky color for container */
+            background-color: #f0f8ff;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .about {
             display: flex;
-            flex-direction: column; /* Stack elements vertically on mobile */
-            align-items: center; /* Center align for mobile */
+            flex-direction: column;
+            align-items: center;
             margin: 20px 0;
             padding: 20px;
-            background: #ffe4e1; /* Light pink */
+            background: #ffe4e1;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1s ease forwards; /* Fade-in animation for about section */
         }
 
         .about img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
-            margin-bottom: 20px; /* Space below image for mobile */
-            animation: zoomIn 0.6s forwards; /* Zoom-in animation for image */
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .about-info {
-            max-width: 600px;
-            text-align: center; /* Center align text for mobile */
+            margin-bottom: 20px;
         }
 
         .projects {
@@ -92,79 +87,144 @@
         }
 
         .project-card {
-            background: #e6e6fa; /* Light purple */
+            background: #e6e6fa;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             margin: 10px;
             padding: 20px;
             width: calc(30% - 40px);
-            transition: transform 0.3s;
-            animation: fadeIn 1s ease forwards; /* Fade-in animation for project cards */
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            background: #d8bfd8; /* Lighter light purple on hover */
-            animation: bounce 0.3s; /* Bounce effect on hover */
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
         }
 
         .project-card img {
             max-width: 100%;
             border-radius: 10px;
-            animation: fadeIn 0.6s forwards; /* Fade-in animation for project images */
         }
 
         footer {
             text-align: center;
             padding: 15px 0;
-            background-color: #e6e6fa; /* Light purple footer */
+            background-color: #e6e6fa;
             color: #000;
+        }
+
+        .ftco-section {
+            padding: 50px 0;
+        }
+
+        .heading-section {
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .skill-item {
+            text-align: center;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 10px solid #d8bfd8;
             position: relative;
-            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .circle .percentage {
+            position: absolute;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .circle strong {
+            position: absolute;
+            bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .circle:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            animation: slideIn 0.8s ease forwards; /* Slide-in animation for footer */
+            height: 100%;
+            border-radius: 50%;
+            clip: rect(0px, 150px, 150px, 75px);
+            background: #d8bfd8;
+            transform: rotate(0deg);
+        }
+
+        .circle[data-value='0.90']:before {
+            transform: rotate(324deg);
+        }
+
+        .circle[data-value='0.85']:before {
+            transform: rotate(306deg);
+        }
+
+        .circle[data-value='0.95']:before {
+            transform: rotate(342deg);
+        }
+
+        .circle[data-value='0.70']:before {
+            transform: rotate(252deg);
+        }
+
+        .circle[data-value='0.80']:before {
+            transform: rotate(288deg);
         }
 
         @media (max-width: 768px) {
-            .project-card {
-                width: calc(48% - 40px);
-            }
-        }
-
-        @media (max-width: 480px) {
             .project-card {
                 width: 100%;
             }
 
             .about {
-                flex-direction: column; /* Stack elements vertically on mobile */
-                align-items: center; /* Center align for mobile */
+                flex-direction: column;
             }
 
-            .about-info {
-                text-align: center; /* Center align text for mobile */
-            }
-
-            h1 {
-                font-size: 2em; /* Adjust header size for mobile */
+            .about img {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
 </head>
+
 <body>
+    <nav>
+        <div>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </nav>
+
     <header>
         <h1>Muhammad Shafique UR Rehman</h1>
         <p>Web Developer | Designer | Student</p>
     </header>
-    
+
     <div class="container">
-        <section class="about">
+        <section id="about" class="about">
             <img src="23.jpg" style="object-fit: contain;" alt="Muhammad Shafique UR Rehman">
             <div class="about-info">
                 <h2>About Me</h2>
@@ -176,7 +236,7 @@
             </div>
         </section>
 
-        <section class="projects">
+        <section id="projects" class="projects">
             <h2>My Projects</h2>
             <div class="project-card">
                 <img src="project1.jpg" alt="Project 1">
@@ -196,8 +256,67 @@
         </section>
     </div>
 
-    <footer>
+    <div class="container">
+        <section class="ftco-section" id="skills-section">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 heading-section">
+                    <!-- <span class="subheading">Skills</span> -->
+                    <h2 class="mb-4">My Skills</h2>
+                    <p>Proficiencies I bring to the table, shaping ideas into impactful creations with precision and expertise.</p>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="circle" data-value="0.90">
+                        <strong>Microsoft Office</strong>
+                        <div class="percentage">90%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="circle" data-value="0.85">
+                        <strong>Web Designing</strong>
+                        <div class="percentage">85%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="circle" data-value="0.95">
+                        <strong>Web Development</strong>
+                        <div class="percentage">95%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="circle" data-value="0.90">
+                        <strong>Chatbot AI Development</strong>
+                        <div class="percentage">90%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="circle" data-value="0.70">
+                        <strong>HTML</strong>
+                        <div class="percentage">70%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="circle" data-value="0.70">
+                        <strong>CSS</strong>
+                        <div class="percentage">70%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="circle" data-value="0.80">
+                        <strong>Bootstrap</strong>
+                        <div class="percentage">80%</div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
         <p>&copy; 2024 Muhammad Shafique UR Rehman. All rights reserved.</p>
+        <p>Contact me: <a href="mailto:balochshafique@gmail.com">balochshafique@gmail.com</a></p>
     </footer>
 </body>
+
 </html>
