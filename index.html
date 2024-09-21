@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Shafique UR Rehman | Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB; /* Light sky blue */
+            color: #333; /* Darker text for readability */
+            animation: fadeIn 1s; /* Fade-in animation for body */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #e6e6fa; /* Light purple header */
+            color: #000;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease forwards; /* Slide-in animation for header */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: popIn 0.5s ease forwards; /* Pop-in animation for h1 */
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f0f8ff; /* Light sky color for container */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffe4e1; /* Light pink */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease forwards; /* Fade-in animation for about section */
+        }
+
+        .about img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            animation: zoomIn 0.6s forwards; /* Zoom-in animation for image */
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .about-info {
+            max-width: 600px;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .project-card {
+            background: #e6e6fa; /* Light purple */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            width: calc(30% - 40px);
+            transition: transform 0.3s;
+            animation: fadeIn 1s ease forwards; /* Fade-in animation for project cards */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: #d8bfd8; /* Lighter light purple on hover */
+            animation: bounce 0.3s; /* Bounce effect on hover */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .project-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            animation: fadeIn 0.6s forwards; /* Fade-in animation for project images */
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #e6e6fa; /* Light purple footer */
+            color: #000;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: slideIn 0.8s ease forwards; /* Slide-in animation for footer */
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                width: calc(48% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Muhammad Shafique UR Rehman</h1>
+        <p>Web Developer | Designer | Student</p>
+    </header>
+    
+    <div class="container">
+        <section class="about">
+            <img src="23.jpg" style="object-fit: contain;" alt="Muhammad Shafique UR Rehman">
+            <div class="about-info">
+                <h2>About Me</h2>
+                <p>Hello! I’m Muhammad Shafique UR Rehman, an intern developer and a software engineering student currently working at Jzarr IT Company. My journey into the tech world began with a fascination for technology and problem-solving, and I've since developed a strong foundation in HTML, CSS, and JavaScript.</p>
+                <h3>Personal Information</h3>
+                <p><strong>Email:</strong> balochshafique@gmail.com</p>
+                <p><strong>Phone:</strong> +923283322311</p>
+                <p><strong>Location:</strong> Karachi, Pakistan</p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>My Projects</h2>
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project Title 1</h3>
+                <p>A brief description of what this project is about.</p>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project Title 2</h3>
+                <p>A brief description of what this project is about.</p>
+            </div>
+            <div class="project-card">
+                <img src="project3.jpg" alt="Project 3">
+                <h3>Project Title 3</h3>
+                <p>A brief description of what this project is about.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Shafique UR Rehman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
