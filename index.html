@@ -5,27 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Shafique UR Rehman | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #87CEEB;
-            color: #333;
+            background: linear-gradient(45deg, #FF6F61, #30D5C8, #FFF700);
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+            color: #fff;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav {
-            background-color: #e6e6fa;
+            background-color: rgba(255, 255, 255, 0.2);
             padding: 15px;
-            text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         nav a {
@@ -36,20 +49,7 @@
         }
 
         nav a:hover {
-            color: #d8bfd8;
-        }
-
-        header {
-            background-color: #e6e6fa;
-            color: #000;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
+            color: #fff;
         }
 
         .container {
@@ -57,7 +57,7 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background-color: #f0f8ff;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -68,176 +68,98 @@
             align-items: center;
             margin: 20px 0;
             padding: 20px;
-            background: #ffe4e1;
-            border-radius: 10px;
-        }
-
-        .about img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
-        }
-
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-
-        .project-card {
-            background: #e6e6fa;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            margin: 10px;
-            padding: 20px;
-            width: calc(30% - 40px);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-card img {
-            max-width: 100%;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
         }
 
         footer {
             text-align: center;
             padding: 15px 0;
-            background-color: #e6e6fa;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.2);
             color: #000;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .ftco-section {
-            padding: 50px 0;
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .heading-section {
-            text-align: center;
+        .card-img-top {
+            height: 200px;
+            object-fit: cover; /* Ensures the image covers the area without stretching */
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
-            justify-items: center;
+        .offcanvas {
+            background: linear-gradient(45deg, #FF6F61, #30D5C8);
+            color: #fff;
+            transition: transform 0.5s ease;
         }
 
-        .skill-item {
-            text-align: center;
+        .offcanvas-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 10px solid #d8bfd8;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px auto;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .circle:hover {
-            transform: scale(1.1);
-        }
-
-        .circle .percentage {
-            position: absolute;
+        .offcanvas-body a {
+            color: #fff;
             font-size: 1.2em;
-            color: #333;
+            transition: color 0.3s;
         }
 
-        .circle strong {
-            position: absolute;
-            bottom: 10px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .circle:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            clip: rect(0px, 150px, 150px, 75px);
-            background: #d8bfd8;
-            transform: rotate(0deg);
-        }
-
-        .circle[data-value='0.90']:before {
-            transform: rotate(324deg);
-        }
-
-        .circle[data-value='0.85']:before {
-            transform: rotate(306deg);
-        }
-
-        .circle[data-value='0.95']:before {
-            transform: rotate(342deg);
-        }
-
-        .circle[data-value='0.70']:before {
-            transform: rotate(252deg);
-        }
-
-        .circle[data-value='0.80']:before {
-            transform: rotate(288deg);
-        }
-
-        @media (max-width: 768px) {
-            .project-card {
-                width: 100%;
-            }
-
-            .about {
-                flex-direction: column;
-            }
-
-            .about img {
-                width: 120px;
-                height: 120px;
-            }
+        .offcanvas-body a:hover {
+            color: #FFF700;
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <div>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills-section">Skills</a> <!-- Updated this line -->
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-    </nav>
-
     <header>
         <h1>Muhammad Shafique UR Rehman</h1>
         <p>Web Developer | Designer | Student</p>
+        <nav class="d-flex justify-content-between align-items-center">
+            <div>
+                <button class="btn btn-outline-dark me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+                </button>
+                <a href="path/to/your/CV.pdf" target="_blank" class="btn btn-outline-light">
+                    View CV
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </nav>
     </header>
+    
 
-    <div class="container">
-        <section id="about" class="about">
-            <img src="23.jpg" style="object-fit: contain;" alt="Muhammad Shafique UR Rehman">
-            <div class="about-info">
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav>
+                <a class="nav-link" href="#about">About Me</a>
+                <a class="nav-link" href="#own_projects">Projects</a>
+                <a class="nav-link" href="#skills_section">Skills</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <section id="about" class="about" style="background: transparent;">
+        <div class="about-info" style="display: flex; align-items: center; background: transparent;">
+            <img src="23.png" style="width: 150px; height: 150px; border-radius: 50%; margin-right: 20px; background: #yourColor; border: none;" alt="Muhammad Shafique UR Rehman">
+            <div>
                 <h2>About Me</h2>
                 <p>Hello! I’m Muhammad Shafique UR Rehman, an intern developer and a software engineering student currently working at Jzarr IT Company. My journey into the tech world began with a fascination for technology and problem-solving, and I've since developed a strong foundation in HTML, CSS, and JavaScript.</p>
                 <h3>Personal Information</h3>
@@ -245,87 +167,202 @@
                 <p><strong>Phone:</strong> +923283322311</p>
                 <p><strong>Location:</strong> Karachi, Pakistan</p>
             </div>
-        </section>
+        </div>
+    </section>
+    
 
-        <section id="projects" class="projects">
+            
+
+        </section>
+        
+
+        <section id="own_projects" class="projects">
             <h2>My Projects</h2>
-            <div class="project-card">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Project Title 1</h3>
-                <p>A brief description of what this project is about.</p>
-            </div>
-            <div class="project-card">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Project Title 2</h3>
-                <p>A brief description of what this project is about.</p>
-            </div>
-            <div class="project-card">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>Project Title 3</h3>
-                <p>A brief description of what this project is about.</p>
-            </div>
-        </section>
-    </div>
-
-    <div class="container">
-        <section class="ftco-section" id="skills-section">
-            <div class="row justify-content-center pb-5">
-                <div class="col-md-12 heading-section">
-                    <h2 class="mb-4">My Skills</h2>
-                    <p>Proficiencies I bring to the table, shaping ideas into impactful creations with precision and expertise.</p>
-                </div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="circle" data-value="0.90">
-                        <strong>Microsoft Office</strong>
-                        <div class="percentage">90%</div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1450388655/photo/planning-project-management-and-marketing-with-business-people-in-meeting-for-research.jpg?s=612x612&w=0&k=20&c=gmf02eSD04Ps9j9vnFSVjBVH2w3nKpP3vTs0RalGawg=" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Project Title 1</h5>
+                            <p class="card-text">A brief description of what this AI project is about.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="circle" data-value="0.85">
-                        <strong>Web Designing</strong>
-                        <div class="percentage">85%</div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1057690406/photo/project-manager-meeting-with-team-for-decision-on-planning-milestones-and-deliverables-gantt.jpg?s=612x612&w=0&k=20&c=xsJs3kek6v_VV9qpj6AsVmxBrx2IQUfveukeBnqIkGU=" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Project Title 2</h5>
+                            <p class="card-text">A brief description of what this AI project is about.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="circle" data-value="0.95">
-                        <strong>Web Development</strong>
-                        <div class="percentage">95%</div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="circle" data-value="0.90">
-                        <strong>Chatbot AI Development</strong>
-                        <div class="percentage">90%</div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="circle" data-value="0.70">
-                        <strong>HTML</strong>
-                        <div class="percentage">70%</div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="circle" data-value="0.70">
-                        <strong>CSS</strong>
-                        <div class="percentage">70%</div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="circle" data-value="0.80">
-                        <strong>Bootstrap</strong>
-                        <div class="percentage">80%</div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1421945982/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.jpg?s=612x612&w=0&k=20&c=yiVgSpPp_ojM3KZ3lf-vJa21qLiuo3Xf4ItCPzYyq6Y=" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Project Title 3</h5>
+                            <p class="card-text">A brief description of what this AI project is about.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="services" class="services">
+            <h2 class="text-center mb-5">My Services</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1421945982/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.jpg?s=612x612&w=0&k=20&c=yiVgSpPp_ojM3KZ3lf-vJa21qLiuo3Xf4ItCPzYyq6Y=" class="card-img-top" alt="Web Development">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Building responsive and user-friendly websites using the latest technologies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1421945982/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.jpg?s=612x612&w=0&k=20&c=yiVgSpPp_ojM3KZ3lf-vJa21qLiuo3Xf4ItCPzYyq6Y=" class="card-img-top" alt="Graphic Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Graphic Design</h5>
+                            <p class="card-text">Creating visually appealing designs for branding and marketing purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1421945982/photo/project-manager-working-on-laptop-and-updating-tasks-and-milestones-progress-planning-with.jpg?s=612x612&w=0&k=20&c=yiVgSpPp_ojM3KZ3lf-vJa21qLiuo3Xf4ItCPzYyq6Y=" alt="SEO Services">
+                        <div class="card-body">
+                            <h5 class="card-title">SEO Services</h5>
+                            <p class="card-text">Optimizing websites to rank higher in search engines and attract more visitors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills_section" class="ftco-section skills">
+            <h2 class="text-center mb-5">My Skills</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5>HTML & CSS</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Web Development</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Communication</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95%</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Project Management</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Graphic Design</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <footer id="contact">
-        <p>&copy; 2024 Muhammad Shafique UR Rehman. All rights reserved.</p>
-        <p>Contact me: <a href="mailto:balochshafique@gmail.com">balochshafique@gmail.com</a></p>
+
+    <section id="gallery" class="gallery">
+        <h2>Image Gallery</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://plus.unsplash.com/premium_photo-1681426687411-21986b0626a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D" class="img-fluid" alt="Gallery Image 1">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://plus.unsplash.com/premium_photo-1680700221525-c41dc28197f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D" class="img-fluid" alt="Gallery Image 2">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="Gallery Image 4">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="Gallery Image 5">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="Gallery Image 6">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="Gallery Image 7">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300" class="img-fluid" alt="Gallery Image 8">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .gallery {
+            margin: 40px 0;
+            text-align: center;
+        }
+    
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        .gallery-item img {
+            border-radius: 10px;
+            transition: transform 0.3s;
+            display: block;
+            width: 100%;
+        }
+    
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+    
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+    
+    <footer>
+        <p>&copy; 2024 Muhammad Shafique UR Rehman</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
