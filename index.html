@@ -4,14 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Shafique UR Rehman | Portfolio</title>
+    <title>Responsive Portfolio with Off-Canvas Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
     <style>
-        /* Custom styles for the navbar */
+        /* Custom Styles for Header */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Deep Black Background */
+        }
+
         .navbar {
-            background: linear-gradient(to right, lightpurple, lightpink, lightskyblue);
-            border-bottom: 2px solid lightblue;
+            background: linear-gradient(45deg, #FF9A8B, #FF6A8D, #FFB3B3); /* Lighter, decent colors */
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            padding: 10px 0;
+            border-bottom: 2px solid #FF6A8D; /* Slightly darker border for contrast */
+        }
+
+        /* Animation for gradient background */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .navbar-brand {
@@ -21,401 +45,201 @@
         }
 
         .navbar-nav .nav-link {
-            padding: 10px 15px;
-            font-size: 1.1rem;
             color: white;
+            margin-right: 15px;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #ffccff;
-        }
-
-        .btn-outline-dark {
-            border-color: #ffccff;
-            color: #ffccff;
-        }
-
-        .btn-outline-dark:hover {
-            background-color: #ffccff;
-            color: white;
+            color: #FF6A8D; /* Matching the new theme */
         }
 
         .btn-outline-light {
-            border-color: white;
-            color: white;
+            border-color: #FF6A8D;
+            color: #FF6A8D;
         }
 
         .btn-outline-light:hover {
+            background-color: #FF6A8D;
+            color: #000; /* Black for contrast */
+        }
+
+        /* Off-Canvas Menu Styles */
+        .offcanvas {
+            background: linear-gradient(45deg, #FF9A8B, #FF6A8D, #FFB3B3); /* Same gradient as navbar */
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite; /* Same animation as navbar */
+        }
+
+        .offcanvas-header {
+            color: white;
+        }
+
+        .offcanvas-body {
+            color: white;
+        }
+
+        .offcanvas-body .nav-link {
+            color: white;
+            padding: 10px;
+        }
+
+        .offcanvas-body .nav-link:hover {
+            color: #FF6A8D;
+        }
+
+        /* Make the hamburger icon visible */
+        .navbar-toggler {
+            border: none;
+            color: white;
+            background-color: #FF6A8D; /* Button background color */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+        }
+
+        .navbar-toggler:hover {
+            background-color: #FF9A8B; /* Lighter background on hover */
+            transform: scale(1.1); /* Slightly scale up on hover */
+        }
+
+        .navbar-toggler-icon {
             background-color: white;
-            color: lightpurple;
         }
 
-        /* Adjust navbar padding and font-size for smaller screens */
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.2rem;
-            }
-
-            .navbar-nav .nav-link {
-                font-size: 1rem;
-                padding: 8px 10px;
-            }
-
-            .btn-outline-dark {
-                font-size: 0.9rem;
-            }
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
+        /* About Us Section Styles */
+        .about-section {
             background: linear-gradient(45deg, #FF6F61, #30D5C8, #FFF700);
             background-size: 300% 300%;
-            animation: gradient 15s ease infinite;
+            animation: gradient 10s ease infinite;
+            padding: 50px 0;
             color: #fff;
+            border-radius: 15px;
         }
 
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
             }
-
             50% {
                 background-position: 100% 50%;
             }
-
             100% {
                 background-position: 0% 50%;
             }
         }
 
-        header {
-            background: rgba(255, 255, 255, 0.1);
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: bold;
             color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        nav {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .about-text {
+            font-size: 1.1rem;
+            text-align: left;
+            margin-bottom: 20px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #000;
-            margin: 0 15px;
-            font-size: 1.2em;
+        .about-image img {
+            max-width: 100%;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        nav a:hover {
-            color: #fff;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .about {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-        }
-
-        .card {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #000;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .gallery {
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            position: relative;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery-item img {
-            border-radius: 10px;
-            transition: transform 0.3s;
-            display: block;
-            width: 100%;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .about-info {
-                flex-direction: column;
+            .about-section {
+                padding: 20px;
             }
 
-            nav a {
-                font-size: 1em;
+            .about-title {
+                font-size: 2rem;
             }
 
-            .gallery-item img {
-                height: 150px;
-                object-fit: cover;
+            .about-text {
+                font-size: 1rem;
             }
         }
-
-        .about-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-pic {
-            width: 150px; /* Adjust size as needed */
-            height: 150px; /* Adjust size as needed */
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px; /* Space between image and text */
-        }
-
-        .profile-pic img {
-            width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            object-fit: cover; /* Ensure image covers the area */
-        }
-
-        .card {
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-}
-
     </style>
 </head>
 
 <body>
-    <!-- Responsive Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+
+    <!-- Responsive Navbar with Off-Canvas Menu -->
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand text-center" href="#">Muhammad Shafique <br> UR Rehman</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <a class="navbar-brand" href="#">Your Portfolio</a>
+            <!-- Off-Canvas Trigger Button (Hamburger Icon) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
+                        <a class="nav-link active" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#own_projects">Projects</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills_section">Skills</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="path/to/your/CV.pdf" target="_blank" class="btn btn-outline-light">View CV</a>
+                    <a href="path/to/your/CV.pdf" target="_blank" class="btn btn-outline-light">Download CV</a>
                 </div>
             </div>
         </div>
     </nav>
-    
 
-    <!-- Page Content -->
-    <div class="container">
-        <section id="about" class="about">
-            <div class="about-info">
-                <div class=" border" style="width: 340px; height: 370px;">
-                    <img src="23.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Muhammad Shafique UR Rehman">
-                </div>
-                <div class="ms-3">
-                    <h2>About Me</h2>
-                    <p>Hello! I’m Muhammad Shafique UR Rehman, an intern developer and a software engineering student
-                        currently working at Jzarr IT Company. My journey into the tech world began with a fascination
-                        for technology and problem-solving, and I've since developed a strong foundation in HTML, CSS,
-                        and JavaScript.</p>
-                    <h3>Personal Information</h3>
-                    <p><strong>Email:</strong> shafique@example.com</p>
-                    <p><strong>Phone:</strong> +1234567890</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div class="container">
-        <section id="own_projects">
-            <h2>Projects</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="1.jpg" class="card-img-top" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 1</h5>
-                            <p class="card-text">Description of Project 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="2.jpg" class="card-img-top" alt="Project 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 2</h5>
-                            <p class="card-text">Description of Project 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="3.jpg" class="card-img-top" alt="Project 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 3</h5>
-                            <p class="card-text">Description of Project 3.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div class="container">
-       
-        <div class="container">
-            <section id="skills_section">
-                <h2>Skills</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">HTML</h5>
-                                <p class="card-text">Expertise in building structured web content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">CSS</h5>
-                                <p class="card-text">Proficient in styling and layout techniques.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">JavaScript</h5>
-                                <p class="card-text">Experience in interactive web applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">Python</h5>
-                                <p class="card-text">Skilled in back-end development and automation.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">React</h5>
-                                <p class="card-text">Familiar with building user interfaces.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">Node.js</h5>
-                                <p class="card-text">Experience in server-side JavaScript development.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- Off-Canvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about" data-bs-dismiss="offcanvas">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects" data-bs-dismiss="offcanvas">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills" data-bs-dismiss="offcanvas">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <div class="container">
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form action="submit_form.php" method="post">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Muhammad Shafique UR Rehman. All rights reserved.</p>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- About Us Section -->
+    <div class="container-fluid about-section">
+        <div class="container text-center py-5">
+            <h2 class="about-title">About Me</h2>
+            <div class="row align-items-center">
+                <!-- Image Column -->
+                <div class="col-md-6 about-image">
+                    <img src="2.jpg" style="object-fit: contain;" class="img-fluid rounded-circle" alt="Profile Image">
+                </div>
+                <!-- Text Column -->
+                <div class="col-md-6 about-text">
+                    <p>Hello! I’m Muhammad Shafique UR Rehman, a passionate intern developer and a dedicated software engineering student currently honing my skills at Jzarr IT Company. My journey into the tech world was fueled by a deep curiosity for technology and a knack for problem-solving. I thrive on challenges and enjoy creating innovative solutions that make a difference.</p>
+                    <p>With a strong foundation in HTML, CSS, and JavaScript, I am constantly exploring new technologies and frameworks to expand my skill set. I believe in the power of collaboration and am always eager to learn from others while sharing my own knowledge. In my free time, I love working on personal projects that push my boundaries and allow me to express my creativity.</p>
+                    <p>I am excited about the future and look forward to contributing to impactful projects that drive positive change in the world.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
