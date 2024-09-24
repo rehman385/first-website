@@ -7,134 +7,115 @@
     <title>Responsive Portfolio with Off-Canvas Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
 
-    <style>
-        /* Custom Styles for Header */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f4f8; /* Soft background color */
-        }
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(270deg, #ff7eb3, #00c6ff); /* Light pink to light sky blue gradient */
+    border-bottom: 1px solid #ddd; /* Soft border at the bottom */
+    color: white; /* Text color for visibility */
+}
 
-        .navbar {
-            background: linear-gradient(45deg, #a0c4ff, #b9fbc0, #fff3b0); /* Soft pastel colors */
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite; /* Slower animation for a soothing effect */
-            padding: 10px 0;
-            border-bottom: 2px solid #a0c4ff; /* Soft border for contrast */
-        }
+/* Navbar Brand Styles */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* White color for logo */
+}
 
-        /* Animation for gradient background */
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
+/* Navbar Link Styles */
+.nav-link {
+    font-size: 1rem;
+    color: #fff; /* White color for text */
+}
 
-            50% {
-                background-position: 100% 50%;
-            }
+.nav-link:hover {
+    color: #ffe600; /* Change color on hover */
+}
 
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+/* Social Icons Styles */
+.social-icons a {
+    font-size: 1.5rem;
+    color: #fff; /* White color for icons */
+}
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a4a4a; /* Soft text color */
-        }
+.social-icons a:hover {
+    color: #ffe600; /* Change color on hover */
+}
 
-        .navbar-nav .nav-link {
-            color: #4a4a4a; /* Soft text color */
-            margin-right: 15px;
-        }
+/* Button Styles */
+.btn-outline-primary {
+    color: #fff; /* Button text color */
+    border-color: #fff; /* Button border color */
+}
 
-        .navbar-nav .nav-link:hover {
-            color: #ff6f61; /* Slightly darker color on hover */
-        }
+.btn-outline-primary:hover {
+    background-color: #ffe600; /* Button background on hover */
+    color: black; /* Button text color on hover */
+}
 
-        .btn-outline-light {
-            border-color: #ff6f61;
-            color: #ff6f61;
-        }
+/* Adjustments for Offcanvas */
+@media (max-width: 768px) {
+    .social-icons {
+        margin-top: 10px; /* Add margin for social icons on small screens */
+    }
+}
 
-        .btn-outline-light:hover {
-            background-color: #ff6f61;
-            color: #fff; /* White for contrast */
-        }
 
-        /* Off-Canvas Menu Styles */
-        .offcanvas {
-            background: linear-gradient(45deg, #a0c4ff, #b9fbc0, #fff3b0); /* Same gradient as navbar */
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite; /* Same animation as navbar */
-        }
 
-        .offcanvas-header {
-            color: #4a4a4a; /* Soft text color */
-        }
 
-        .offcanvas-body {
-            color: #4a4a4a; /* Soft text color */
-        }
-
-        .offcanvas-body .nav-link {
-            color: #4a4a4a; /* Soft text color */
-            padding: 10px;
-        }
-
-        .offcanvas-body .nav-link:hover {
-            color: #ff6f61; /* Highlight color on hover */
-        }
-
-        /* Make the hamburger icon visible */
-        .navbar-toggler {
-            border: none;
-            color: #4a4a4a; /* Soft text color */
-            background-color: #ff6f61; /* Button background color */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
-        }
-
-        .navbar-toggler:hover {
-            background-color: #ff9a8b; /* Lighter background on hover */
-            transform: scale(1.1); /* Slightly scale up on hover */
-        }
-
-        .navbar-toggler-icon {
-            background-color: white;
-        }
-
-        /* About Us Section Styles */
+/* About Us Section Styles */
         .about-section {
-            background: linear-gradient(45deg, #ffb3b0, #b9fbc0, #a0c4ff); /* Soft gradient for the section */
-            background-size: 300% 300%;
-            animation: gradient 15s ease infinite; /* Slower animation for a soothing effect */
             padding: 50px 0;
-            color: #4a4a4a; /* Soft text color */
-            border-radius: 15px;
+            background-color: #fff;
+            /* White background for simplicity */
         }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
+        .about-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            /* Soft title color */
+            margin-bottom: 30px;
+        }
 
-            50% {
-                background-position: 100% 50%;
-            }
+        .about-image img {
+            max-width: 100%;
+            border: 5px solid #ddd;
+            /* Soft border color */
+            border-radius: 10px;
+            /* Rounded image */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-            100% {
-                background-position: 0% 50%;
-            }
+        .about-card {
+            background-color: #f9f9f9;
+            /* Light background for the card */
+            border: 1px solid #ddd;
+            /* Soft border */
+            border-radius: 10px;
+            /* Rounded corners */
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-logo {
+            font-size: 2rem;
+            color: #ff6f61;
+            /* Logo color */
+            margin-bottom: 15px;
         }
 
         .about-title {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #4a4a4a; /* Soft title color */
+            color: #4a4a4a;
+            /* Soft title color */
             margin-bottom: 30px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
@@ -143,47 +124,91 @@
             font-size: 1.1rem;
             text-align: left;
             margin-bottom: 20px;
-            color: #4a4a4a; /* Soft text color */
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border: 5px solid #fff; /* Soft border color */
-            border-radius: 50%; /* Rounded image */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: #4a4a4a;
+            /* Soft text color */
         }
 
         /* Skills Section Styles */
         .skills-section {
             padding: 50px 0;
-            background-color: #e9f5ff; /* Light background for the skills section */
+            background-color: #e9f5ff;
+            /* Light background for the skills section */
         }
 
         .skills-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: bold;
-            color: #4a4a4a; /* Soft title color */
+            color: #4a4a4a;
+            /* Soft title color */
             margin-bottom: 30px;
         }
 
         .skill-card {
-            background-color: #fff; /* Card background color */
-            border: 1px solid #ddd; /* Soft border */
-            border-radius: 10px; /* Rounded corners */
+            background-color: #fff;
+            /* Card background color */
+            border: 1px solid #ddd;
+            /* Soft border */
+            border-radius: 10px;
+            /* Rounded corners */
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s; /* Smooth hover effect */
+            transition: transform 0.3s;
+            /* Smooth hover effect */
         }
 
         .skill-card:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
+            transform: translateY(-5px);
+            /* Slight lift on hover */
         }
 
         .skill-icon {
             font-size: 2rem;
-            color: #ff6f61; /* Icon color */
+            color: #ff6f61;
+            /* Icon color */
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section Styles */
+        .projects-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+            /* Light background for the projects section */
+        }
+
+        .projects-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            /* Soft title color */
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            /* Card background color */
+            border: 1px solid #ddd;
+            /* Soft border */
+            border-radius: 10px;
+            /* Rounded corners */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* Smooth hover effect */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            /* Slight lift on hover */
+        }
+
+        .project-logo {
+            font-size: 2rem;
+            color: #ff6f61;
+            /* Logo color */
             margin-bottom: 15px;
         }
 
@@ -204,8 +229,8 @@
                 font-size: 2rem;
             }
 
-            .skill-card {
-                margin-bottom: 20px; /* Add margin for spacing on small screens */
+            .projects-title {
+                font-size: 2rem;
             }
         }
     </style>
@@ -214,134 +239,181 @@
 
 <body>
 
-    <!-- Responsive Navbar with Off-Canvas Menu -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">Your Portfolio</a>
-            <!-- Off-Canvas Trigger Button (Hamburger Icon) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a href="path/to/your/CV.pdf" target="_blank" class="btn btn-outline-light">Download CV</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Off-Canvas Menu -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(270deg, #ff7eb3, #00c6ff);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">M. Shafique UR Rehman</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#about" data-bs-dismiss="offcanvas">About</a>
+                    <a class="nav-link active" aria-current="page" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects" data-bs-dismiss="offcanvas">Projects</a>
+                    <a class="nav-link" href="#skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills" data-bs-dismiss="offcanvas">Skills</a>
+                    <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
+            <div class="social-icons">
+                <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <form class="d-flex ms-3">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
         </div>
     </div>
+</nav>
 
+
+    
     <!-- About Us Section -->
-    <section id="about" class="about-section text-center">
+    <section id="about" class="about-section">
         <div class="container">
             <h2 class="about-title">About Me</h2>
             <div class="row">
-                <div class="col-lg-6 about-image">
-                    <img src="2.jpg" alt="Your Name">
+                <div class="col-md-4 about-image">
+                    <img src="2.jpg" alt="Your Name" class="img-fluid">
                 </div>
-                <div class="col-lg-6">
-                    <p class="about-text">Hello! I'm [Your Name], a passionate [Your Profession] with a love for [Your Interests]. I have a diverse skill set that includes [Your Skills]. I'm dedicated to continuous learning and improvement, always seeking new challenges and opportunities to grow.</p>
+                <div class="col-md-8">
+                    <div class="about-card">
+                        <div class="about-logo">🧑‍💻</div> <!-- Replace with logo image or icon -->
+                        <p class="about-text">Hello! I'm a web developer passionate about creating beautiful and
+                            functional websites. I love working with modern web technologies and continuously learning
+                            to enhance my skills.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="projects-title">Projects</h2>
+            <div class="row">
+                <!-- Project Card 1 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-logo">🌐</div> <!-- Replace with logo image or icon -->
+                        <h3>Project Title 1</h3>
+                        <p>A brief description of the first project, explaining what it does and the technologies used.
+                        </p>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-logo">📱</div> <!-- Replace with logo image or icon -->
+                        <h3>Project Title 2</h3>
+                        <p>A brief description of the second project, explaining its features and the development
+                            process.</p>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <div class="project-logo">💻</div> <!-- Replace with logo image or icon -->
+                        <h3>Project Title 3</h3>
+                        <p>A brief description of the third project, highlighting the challenges faced and solutions
+                            implemented.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <h2 class="skills-title">My Skills</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col">
+            <h2 class="skills-title">Skills</h2>
+            <div class="row">
+                <!-- Existing Skill Cards -->
+                <div class="col-md-3">
                     <div class="skill-card">
                         <div class="skill-icon">💻</div>
-                        <h5>Web Development</h5>
+                        <h4>HTML</h4>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="skill-card">
-                        <div class="skill-icon">📱</div>
-                        <h5>Mobile App Development</h5>
-                    </div>
-                </div>
-                <div class="col">
+                <div class="col-md-3">
                     <div class="skill-card">
                         <div class="skill-icon">🎨</div>
-                        <h5>Graphic Design</h5>
+                        <h4>CSS</h4>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-3">
                     <div class="skill-card">
-                        <div class="skill-icon">🚀</div>
-                        <h5>Digital Marketing</h5>
+                        <div class="skill-icon">⚙️</div>
+                        <h4>JavaScript</h4>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="skill-card">
-                        <div class="skill-icon">🔍</div>
-                        <h5>SEO Optimization</h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="skill-card">
-                        <div class="skill-icon">🗣️</div>
-                        <h5>Content Creation</h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="skill-card">
-                        <div class="skill-icon">🤖</div>
-                        <h5>AI & ML</h5>
-                    </div>
-                </div>
-                <div class="col">
+                <div class="col-md-3">
                     <div class="skill-card">
                         <div class="skill-icon">📊</div>
-                        <h5>Data Analysis</h5>
+                        <h4>React</h4>
+                    </div>
+                </div>
+                <!-- New Skill Cards -->
+                <div class="col-md-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <h4>Web Development</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">🛠️</div>
+                        <h4>API Development</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">📱</div>
+                        <h4>Responsive Design</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-card">
+                        <div class="skill-icon">🔒</div>
+                        <h4>Security Practices</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bootstrap JavaScript -->
+    </section>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript Code -->
+    <script>
+        // Auto Close Offcanvas Menu on Click
+
+        const offcanvasMenu = document.getElementById('offcanvasExample');
+        const offcanvasMenuLinks = offcanvasMenu.querySelectorAll('.list-group-item a');
+
+        offcanvasMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                offcanvasMenu.classList.remove('show');
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
